@@ -40,24 +40,32 @@ PPP uses precise satellite orbit and clock information to achieve high accuracy 
 
 PPP offers global coverage without needing ground-based stations. As long as GNSS signals are available, smartphone users can enjoy precise positioning even in remote areas with poor infrastructure.
 
-In addition to the global coverage,  PPP offers high accuracy positioning and navigation. It can achieve decimeter-level accuracy and even centimeter-level accuracy under suitable conditions, enabling precise positioning applications on smartphones.
+In addition to the global coverage,  PPP offers high accuracy positioning and navigation. After the positioning solution is converaged, PPP can achieve decimeter-level accuracy and even centimeter-level accuracy under suitable conditions, enabling precise positioning applications on smartphones.
 
 #### Limitations
-Cons
-Convergence Time: PPP requires a longer time to reach high accuracy, which can be a disadvantage in fast-moving scenarios where immediate results are critical.
-Complex Processing: The technique often involves sophisticated signal processing and post-processing, which can complicate implementation.
-Real-Time Limitations: While it can achieve high accuracy, PPP is generally not as precise in real-time compared to RTK.
-PPP-RTK
-PPP-RTK combines elements of both PPP and RTK, aiming to provide the best of both worlds—high precision and global coverage. This hybrid technique is gaining traction in various applications, particularly in fields requiring rapid and accurate positioning.
 
-Pros
+PPP requires the convergence of positioning data, making it less suitable for real-time use on smartphones. It typically takes 15 to 30 minutes for PPP to achieve high accuracy, which is not ideal for applications needing immediate positioning data. Additionally, the convergence process is computationally demanding, which may be challenging for some smartphones with limited resources.
+
+Furthermore, PPP's positioning accuracy is generally worse than RTK. PPP typically achieves decimeter-level accuracy, while RTK offers centimeter-level accuracy. Therefore, PPP is less suitable for smartphone applications requiring very precise positioning data.
+
+### PPP-RTK
+
+PPP-RTK combines elements of both PPP and RTK to provide the best of both worlds—high precision and global coverage.
+
+#### Advantages
+
+PPP-RTK can ensure high positioning accuracy 
+
 Combines Strengths: By merging the strengths of RTK and PPP, this technique provides enhanced accuracy and faster convergence times, making it versatile for many applications.
 Reduced Convergence Time: PPP-RTK reduces the time required to achieve high accuracy, allowing for quicker access to precise positioning data.
 Versatility: This method is suitable for a range of applications, including surveying, agriculture, and autonomous vehicles, benefiting from both high accuracy and global usability.
+
+#### Limitations
 Cons
 Infrastructure Dependency: While it offers global coverage, PPP-RTK still requires access to correction data, which may depend on the availability of reference stations or networks.
 Cost and Complexity: The combination of techniques increases the complexity and cost of implementation, necessitating advanced processing capabilities.
 Variable Performance: The effectiveness of PPP-RTK can fluctuate based on the quality of the correction data, posing challenges in certain environments.
+
 Conclusion
 In conclusion, the choice of GNSS technique for smartphone navigation depends on the specific requirements of the application at hand. DGNSS offers moderate accuracy with real-time corrections but is limited by infrastructure. RTK provides high precision but also requires nearby base stations, making it less mobile. PPP stands out for its global coverage and flexibility, though it suffers from longer convergence times. Finally, PPP-RTK combines the advantages of both PPP and RTK, offering a versatile solution, albeit at a higher cost and complexity. Understanding the trade-offs among these techniques is crucial for selecting the most suitable GNSS method for effective and efficient navigation in smartphones.
 
