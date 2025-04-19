@@ -18,29 +18,31 @@ Additionally, DGNSS is cost-effective. It offers high positioning accuracy witho
 
 #### Limitations
 
-The accuracy and availability of DGNSS heavily depend on ground-based reference stations. As the distance from these stations increases, DGNSS accuracy decreases, making precise positioning difficult for users far from the stations. Additionally, the broadcast signals have limited coverage, so users outside this area cannot receive correction data. This reliance on proximity to reference stations limits DGNSS's effectiveness in remote or poorly covered areas, negatively impacting its overall reliability for smartphone navigation.
+The accuracy and availability of DGNSS heavily depend on distance between the smartphone and the ground-based reference stations. As the distance from these stations increases, DGNSS accuracy decreases, making precise positioning difficult for users far from the stations. Additionally, the broadcast signals have limited coverage, so users outside this area cannot receive correction data. This reliance on proximity to reference stations limits DGNSS's effectiveness in remote or poorly covered areas, negatively impacting its overall reliability for smartphone navigation.
 
 ### Real-Time Kinematic (RTK)
 
-RTK achieves high-precision positioning by using carrier-phase measurements from a fixed ground-based station and the smartphone's GNSS antenna. The ground station broadcasts correction data to the smartphone, enabling centimeter-level positioning accuracy.
+RTK achieves high-precision positioning by using carrier-phase measurements from a fixed ground base station and the smartphone's GNSS antenna. The ground station broadcasts correction data to the smartphone, enabling centimeter-level positioning accuracy.
 
 #### Advantage
 
-RTK has a high precision, which is crucial for certain smartphone applications requiring very precise measurements. For instance, "lane-level navigation" in map applications needs to accurately determine which lane a user is in on a road. The centimeter-level positioning accuracy offered by RTK would make very precise positioning possible.
+RTK has a high precision, which is crucial for certain smartphone applications requiring very precise measurements. For instance, "lane-level navigation" in map applications in smartphone needs to accurately determine which lane a user is in on a road. The centimeter-level positioning accuracy offered by RTK would make very precise positioning in smartphone applications possible.
 
 #### Limitations
 
-Cons
-Infrastructure Requirement: RTK requires a base station to be located within a certain distance of the rover, limiting its mobility and operational range.
-Signal Interference: Performance can degrade in urban canyons or forested areas where satellite signals may be obstructed.
-Cost Considerations: Setting up and maintaining RTK systems can be expensive due to the need for specialized equipment and infrastructure.
-Precise Point Positioning (PPP)
-PPP is a GNSS positioning technique that uses precise satellite orbit and clock information to achieve high accuracy without the need for a local reference station. It is particularly useful in remote areas where traditional infrastructures are lacking.
+RTK's accuracy and availability are highly dependent on the distance between the smartphone and the base station. As the distance increases, RTK's accuracy decreases, limiting its effectiveness to a small range (typically several kilometers) from the base station. In remote areas where the smartphone cannot receive signals from the base station, RTK fails to provide precise positioning. This limitation restricts its wide application in smartphone navigation.
 
-Pros
-Global Coverage: PPP provides accurate positioning anywhere in the world, as it does not rely on local infrastructure or base stations.
-High Accuracy: After a convergence period, PPP can achieve decimeter-level accuracy, making it suitable for various applications, including geolocation and navigation.
-Flexibility: The simplicity of requiring only a GNSS receiver makes PPP easy to deploy in diverse environments.
+### Precise Point Positioning (PPP)
+
+PPP uses precise satellite orbit and clock information to achieve high accuracy without a local reference station.
+
+#### Advantages
+
+PPP offers global coverage without needing ground-based stations. As long as GNSS signals are available, smartphone users can enjoy precise positioning even in remote areas with poor infrastructure.
+
+In addition to the global coverage,  PPP offers high accuracy positioning and navigation. It can achieve decimeter-level accuracy and even centimeter-level accuracy under suitable conditions, enabling precise positioning applications on smartphones.
+
+#### Limitations
 Cons
 Convergence Time: PPP requires a longer time to reach high accuracy, which can be a disadvantage in fast-moving scenarios where immediate results are critical.
 Complex Processing: The technique often involves sophisticated signal processing and post-processing, which can complicate implementation.
