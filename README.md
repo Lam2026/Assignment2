@@ -5,18 +5,20 @@
 Global Navigation Satellite Systems (GNSS) have been widely used in the smartphones' navigation. This essay aims at comparing the advantages and limitations of differential GNSS (DGNSS), real-time kinematic (RTK), precise point positioning (PPP), and PPP-RTK techniques.
 
 1. Differential GNSS (DGNSS)
-DGNSS makes the GNSS positioning more accurate by utilizing a network of fixed ground-based reference stations. By calculating the difference between the true position of the ground station and its position determined from the GNSS signals, each ground station would broadcast the correction data, which is the difference calculated, to near-by GNSS receivers so that the positioning errors of the near-by GNSS receivers can generally be reduced to about 1 meter. There are 3 advantages and 3 limitations associated with this DGNSS technique:
+DGNSS makes the GNSS positioning more accurate by utilizing a network of fixed ground-based reference stations. By calculating the difference between the true position of the ground station and its position determined from the GNSS signals, each ground station would broadcast the correction data, which is the difference calculated, to near-by GNSS receivers so that the positioning errors of the near-by GNSS receivers can generally be reduced to about 1 meter.
 
 1.1 Advantages
 
-The first advantage is the improved accuracy. With traditional GNSS positioning technique alone, users may find a large error when using the map applications in mobile phone (such as Google Map). An example is that if the user is in Street A, the GNSS data in the map may show that the user is in the near-by Street B. It makes precise positioning less possible in smartphone. With DGNSS, since the positioning error is dropped to within one to two meters, the smartphone users can 
+One major advantage of DGNSS is its improved accuracy. Traditional GNSS can have significant errors, especially in urban areas with many closely spaced streets. For instance, a user on Street A might be shown as being on nearby Street B, making it difficult to navigate accurately using map applications like Google Maps. DGNSS reduces positioning errors to within one to two meters, allowing for more precise navigation. This means the map can accurately show the user on Street A, making it easier to reach their final destination. Thus, DGNSS enhances the accuracy of smartphone navigation, making it more reliable and suitable for widespread use.
 
-Real-Time Corrections: The system provides instantaneous corrections, which is crucial for dynamic applications where quick response times are necessary.
-Established Infrastructure: DGNSS is a well-established technology, supported by various regional networks, providing reliability and compatibility across devices.
-Cons
-Infrastructure Dependency: The effectiveness of DGNSS is highly dependent on the availability of nearby reference stations. In remote areas, this can be a significant limitation.
-Limited Range: The accuracy of DGNSS diminishes with distance from the reference station, making it less effective in larger geographic areas.
-Complexity: Implementing and maintaining a DGNSS system can be complex, requiring technical expertise and investment in infrastructure.
+Another advantage of DGNSS in smartphone navigation is that DGNSS can provide real-time corrections. Since users may expect the smartphone navigation provide quick responses (such as position updates) to them, the instantaneous corrections provided by DGNSS enables a wider use of dynamic smartphone applications such as location-based services and turn-by-turn navigation in which quick response time is necessary. With DGNSS's instantaneous corrections, the use of dynamic navigation applications become possible in smartphone.
+
+In addition to instantaneous corrections, DGNSS is more economic in terms of cost. Since DGNSS tends to be more cost-effective than the other techniques with high positioning accuracy, DGNSS can be integrated in more smartphones without significantly increasing the costs of production. Since some smartphone consumers are price sensitive, DGNSS gives an advantage to precise smartphone navigation without making smartphone too expensive.
+
+1.2 Limitations
+
+Accuracy and availability of DGNSS highly depends on the ground-based reference stations. The accuracy of DGNSS drops with the increasing distance from the ground stations, so the smartphone users may fail to enjoy precise positioning when they are far from these reference stations. Furthermore, the broadcast signals of ground stations have a limited coverage. When the users is outside the coverage area of the near-by ground stations, the smartphone users cannot receive the correction data from the ground station. The reliance on proximity to reference stations prevents the use of DGNSS in remote or poorly covered areas, nagatively affecting the DGNSS's overall reliability for smartphone navigation.
+
 Real-Time Kinematic (RTK)
 RTK is another advanced GNSS technique that provides high-precision positioning by using measurements from a base station and a rover unit. This method is particularly popular in applications like surveying, agriculture, and construction.
 
