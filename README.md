@@ -4,11 +4,11 @@
 
 This essay aims at comparing the advantages and limitations of differential GNSS (DGNSS), real-time kinematic (RTK), precise point positioning (PPP), and PPP-RTK techniques.
 
-1. Differential GNSS (DGNSS)
+### Differential GNSS (DGNSS)
 
 DGNSS enhances GNSS accuracy by using fixed ground-based reference stations. These stations calculate the difference between their true position and the GNSS-determined position, then broadcast this correction data to nearby smartphone GNSS receivers, reducing positioning errors to about 1 meter.
 
-1.1. Advantages
+#### Advantages
 
 One major advantage of DGNSS is its improved accuracy. Traditional GNSS can have significant errors, especially in urban areas with closely spaced streets. For example, a user on Street A might be shown on nearby Street B, complicating navigation. DGNSS reduces positioning errors to within one to two meters, allowing for more precise navigation. This means the map can accurately show the user on Street A, making it easier to reach their destination. Thus, DGNSS enhances smartphone navigation accuracy, making it more reliable and suitable for widespread use.
 
@@ -16,19 +16,20 @@ Another advantage of DGNSS in smartphone navigation is its ability to provide re
 
 Additionally, DGNSS is cost-effective. It offers high positioning accuracy without significantly increasing production costs, making it feasible to integrate into more smartphones. This is particularly beneficial for price-sensitive consumers, as it provides precise navigation without making smartphones too expensive.
 
-1.2. Limitations
+#### Limitations
 
 The accuracy and availability of DGNSS heavily depend on ground-based reference stations. As the distance from these stations increases, DGNSS accuracy decreases, making precise positioning difficult for users far from the stations. Additionally, the broadcast signals have limited coverage, so users outside this area cannot receive correction data. This reliance on proximity to reference stations limits DGNSS's effectiveness in remote or poorly covered areas, negatively impacting its overall reliability for smartphone navigation.
 
-2. Real-Time Kinematic (RTK)
+### Real-Time Kinematic (RTK)
 
 RTK achieves high-precision positioning by using carrier-phase measurements from a fixed ground-based station and the smartphone's GNSS antenna. The ground station broadcasts correction data to the smartphone, enabling centimeter-level positioning accuracy.
 
-2.1. Advantage
+#### Advantage
 
 RTK has a high precision, which is crucial for certain smartphone applications requiring very precise measurements. For instance, "lane-level navigation" in map applications needs to accurately determine which lane a user is in on a road. The centimeter-level positioning accuracy offered by RTK would make very precise positioning possible.
 
-2.2 Limitations
+#### Limitations
+
 Cons
 Infrastructure Requirement: RTK requires a base station to be located within a certain distance of the rover, limiting its mobility and operational range.
 Signal Interference: Performance can degrade in urban canyons or forested areas where satellite signals may be obstructed.
