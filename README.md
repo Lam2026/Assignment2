@@ -70,25 +70,36 @@ Implementing PPP-RTK in smartphones increases both cost and complexity, potentia
 
 ## Task 4: Discussion on the difficulties and challenges of using LEO communication satellites for GNSS navigation
 
-Low Earth Orbit (LEO) satellites have gained prominence in various sectors, particularly communication, due to their proximity to Earth and low latency. However, when it comes to Global Navigation Satellite Systems (GNSS), the use of LEO satellites presents a unique set of challenges. This essay explores the difficulties associated with leveraging LEO communication satellites for navigation purposes, focusing on aspects such as signal propagation, coverage, accuracy, and operational complexity.
+Low Earth Orbit (LEO) satellites, which orbit at altitudes between 200 and 2,000 kilometers, offer low latency and high data throughput in data transmission. However, their use in GNSS presents various challenges and difficulties, which this essay is going to explore.
 
-Signal Propagation and Delay
-One of the primary challenges of using LEO satellites for GNSS navigation is the signal propagation characteristics. LEO satellites operate at altitudes typically between 180 kilometers and 2,000 kilometers, which is significantly lower than Medium Earth Orbit (MEO) satellites, such as those used in the Global Positioning System (GPS), which orbit at approximately 20,200 kilometers.
+The first challenge and difficulty is the high costs due to the limited signal coverage of the LEO satellites. When a satellite is in an orbit with lower altitude, its signal coverage area decreases. However, signals from at least 4 GNSS satellites are required for positioning. These implies that more LEO GNSS satellites must be deployed to provide global coverage. The costs for producing, launching and maintaining such a large GNSS constellations would probably increase accordingly.
 
+The second challenge is the 
 Signal Strength and Interference
 While the lower altitude of LEO satellites allows for stronger signals due to reduced path loss, it also poses issues related to atmospheric interference and multipath effects. The proximity of LEO satellites means that signals can be more susceptible to disturbances from atmospheric conditions, such as ionospheric delays, which can negatively impact the accuracy of positioning.
-
-Doppler Shift
-LEO satellites are moving at high velocities relative to the Earth's surface, resulting in significant Doppler shifts in the signals they broadcast. This shift can complicate the calculation of precise positions, as receivers must continuously adjust for rapid changes in frequency. The Doppler effect requires sophisticated algorithms to ensure that navigation solutions remain accurate, making the system more complex than traditional GNSS systems.
 
 Coverage and Geometry
 Another challenge is the coverage and geometry provided by LEO satellites. For effective GNSS navigation, a user needs to receive signals from multiple satellites simultaneously to compute a precise position. The limited orbital altitude of LEO satellites means that they have a smaller footprint on the Earth's surface compared to MEO satellites.
 
-Limited Visibility
-LEO satellites move quickly across the sky, which can result in limited visibility for ground-based receivers. A satellite may only be in view for a few minutes before it moves out of range, necessitating a larger constellation of satellites to ensure consistent coverage. This requirement increases the complexity and cost of deploying a LEO satellite navigation system.
+
 
 Geometry of Satellite Positions
 The geometry of satellite positions is crucial for accurate positioning. Ideal satellite arrangements provide a wide angle of visibility, enhancing the precision of the location fix. However, because LEO satellites are in constant motion, the geometry can change rapidly, leading to potential gaps in coverage that could affect the reliability of navigation services in certain areas.
+
+Signal Propagation and Delay
+One of the primary challenges of using LEO satellites for GNSS navigation is the signal propagation characteristics. LEO satellites operate at altitudes typically between 180 kilometers and 2,000 kilometers, which is significantly lower than Medium Earth Orbit (MEO) satellites, such as those used in the Global Positioning System (GPS), which orbit at approximately 20,200 kilometers.
+
+
+
+Doppler Shift
+LEO satellites are moving at high velocities relative to the Earth's surface, resulting in significant Doppler shifts in the signals they broadcast. This shift can complicate the calculation of precise positions, as receivers must continuously adjust for rapid changes in frequency. The Doppler effect requires sophisticated algorithms to ensure that navigation solutions remain accurate, making the system more complex than traditional GNSS systems.
+
+
+
+Limited Visibility
+LEO satellites move quickly across the sky, which can result in limited visibility for ground-based receivers. A satellite may only be in view for a few minutes before it moves out of range, necessitating a larger constellation of satellites to ensure consistent coverage. This requirement increases the complexity and cost of deploying a LEO satellite navigation system.
+
+
 
 Accuracy and Precision
 Accuracy is a fundamental requirement for any GNSS system. While LEO satellites can offer some advantages, such as lower latency, they also face challenges that can hinder their ability to provide precise navigation solutions.
