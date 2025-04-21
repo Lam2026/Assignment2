@@ -92,14 +92,11 @@ GNSS Reflectometry (GNSS-R) uses reflected GNSS signals from Earth's surfaces, l
 
 ### Applications of GNSS-R
 
-1. Soil Moisture Estimation
-
-One of the most significant applications of GNSS-R is in the estimation of soil moisture. Accurate soil moisture data is critical for agriculture, hydrology, and climate modeling. GNSS-R provides a cost-effective and efficient means of obtaining this data over large areas without the need for extensive ground-based sensors. By analyzing the reflected signals, researchers can infer moisture levels, which helps in optimizing irrigation practices and managing water resources.
+The first application of GNSS-R is in soil moisture estimation. The soil moisture contents, which can be estimated via the analysis on the reflected GNSS signals from the Earth's surface, is an important information to agriculture, hydrology and climate modeling. Compared to the traditional method, GNSS-R eliminates the need of large-scale deployment of ground-based sensors in a large area for soil moisture estimation, making GNSS-R having high efficiency and economic in estimating soil moisture.
 
 The second application of GNSS-R is in oceanography, which is to study the sea surface conditions. After the reflected GNSS signals from the sea surface is analyzed, the sea information such as the sea surface height, wave height, and wind speed can be obtained. With the above information, the ocean dynamics, sea level rise, and climate change can be understood while weather can be forecasted. Hence, a large area of ocean can be monitored with high temporal resolution with GNSS-R that the traditional methods may fail to achieve.
 
-3. Vegetation Monitoring
-In addition to soil and ocean studies, GNSS-R can be applied to monitor vegetation. By analyzing how GNSS signals reflect off vegetation canopies, researchers can assess plant health and biomass. This information is valuable for ecological studies, agriculture, and forestry management. GNSS-R allows for the continuous monitoring of vegetation conditions over vast landscapes, providing insights into ecosystem dynamics and changes due to environmental stressors.
+The third application of GNSS-R is on vegetation monitoring. By analyzing how GNSS signals reflect off vegetation canopies, researchers can assess plant health and biomass. This information is valuable for ecological studies, agriculture, and forestry management. GNSS-R allows for the continuous monitoring of vegetation conditions over vast landscapes, providing insights into ecosystem dynamics and changes due to environmental stressors.
 
 4. Urban Studies
 GNSS-R has applications in urban environments as well. It can be used to monitor changes in urban surfaces, such as the impact of construction or land use changes. By analyzing reflected signals, researchers can assess urban surface properties, including impervious surfaces and green spaces. This data is essential for urban planning and managing the urban heat island effect.
