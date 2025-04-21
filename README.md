@@ -96,10 +96,9 @@ The first application of GNSS-R is in soil moisture estimation. The soil moistur
 
 The second application of GNSS-R is in oceanography, which is to study the sea surface conditions. After the reflected GNSS signals from the sea surface is analyzed, the sea information such as the sea surface height, wave height, and wind speed can be obtained. With the above information, the ocean dynamics, sea level rise, and climate change can be understood while weather can be forecasted. Hence, a large area of ocean can be monitored with high temporal resolution with GNSS-R that the traditional methods may fail to achieve.
 
-The third application of GNSS-R is on vegetation monitoring. By analyzing how GNSS signals reflect off vegetation canopies, researchers can assess plant health and biomass. This information is valuable for ecological studies, agriculture, and forestry management. GNSS-R allows for the continuous monitoring of vegetation conditions over vast landscapes, providing insights into ecosystem dynamics and changes due to environmental stressors.
+The third application of GNSS-R is on vegetation monitoring. The information of surface roughness and dielectric properties can be inferred from the reflected GNSS signals, and such the properties can be analyzed to estimate the vegetation health, biomass, land use, and surface conditions. This application is important for ecological studies, agriculture, land management and disaster response. Compared to the existing methods, GNSS-R enables continuous monitoring of the vegetation conditions.
 
-4. Urban Studies
-GNSS-R has applications in urban environments as well. It can be used to monitor changes in urban surfaces, such as the impact of construction or land use changes. By analyzing reflected signals, researchers can assess urban surface properties, including impervious surfaces and green spaces. This data is essential for urban planning and managing the urban heat island effect.
+The last application is on cryosphere monitoring. The ice thickness, snow depth and the change in ice cover can be estimated via the reflected GNSS signals. This information is important because climate change on polar regions can be studied to predict the future trends in ice melt and the rise in sea level.
 
 Advantages of GNSS-R
 The use of GNSS-R offers several advantages over traditional remote sensing methods:
