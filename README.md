@@ -26,7 +26,7 @@ RTK achieves high-precision positioning by using carrier-phase measurements from
 
 #### Advantage
 
-RTK has a high precision, which is crucial for certain smartphone applications requiring very precise measurements. For instance, "lane-level navigation" in map applications in smartphone needs to accurately determine which lane a user is in on a road. The centimeter-level positioning accuracy offered by RTK would make very precise positioning in smartphone applications possible.
+RTK has a high precision, which is crucial for certain smartphone applications requiring very precise measurements. For instance, "lane-level navigation" in map applications in smartphone needs to accurately determine which lane a user is in on a road. The centimeter-level positioning accuracy offered by RTK would make very precise positioning in smartphone applications possible (such as the "lane-level navigation").
 
 #### Limitations
 
@@ -54,20 +54,15 @@ PPP-RTK combines elements of both PPP and RTK to provide the best of both worlds
 
 #### Advantages
 
-PPP-RTK can ensure high positioning accuracy 
+PPP-RTK merges the advantages of RTK and PPP. RTK offers centimeter-level precision, while PPP provides global coverage by relying solely on GNSS signals from satellites, without the need for ground-based reference stations. This means that when smartphone users are within the signal coverage of an RTK base station, they can achieve very high precision navigation. Conversely, when users are outside the coverage of the RTK base station, they can still enjoy precise navigation using PPP. This combination ensures that users benefit from both high precision and extensive coverage from PPP-RTK technology.
 
-Combines Strengths: By merging the strengths of RTK and PPP, this technique provides enhanced accuracy and faster convergence times, making it versatile for many applications.
-Reduced Convergence Time: PPP-RTK reduces the time required to achieve high accuracy, allowing for quicker access to precise positioning data.
-Versatility: This method is suitable for a range of applications, including surveying, agriculture, and autonomous vehicles, benefiting from both high accuracy and global usability.
+Another advantage of PPP-RTK is the fast convergence time. PPP-RTK considers both the preceise satellite orbit and clock corrections from PPP and the real-time atmospheric corrections and regional reference network data from RTK, which allows PPP-RTK to achieve precise navigation with faster convergence. It is important to smartphone users since some applications require instantaneous position data from GNSS such as the real-time navigation.
 
 #### Limitations
-Cons
-Infrastructure Dependency: While it offers global coverage, PPP-RTK still requires access to correction data, which may depend on the availability of reference stations or networks.
-Cost and Complexity: The combination of techniques increases the complexity and cost of implementation, necessitating advanced processing capabilities.
-Variable Performance: The effectiveness of PPP-RTK can fluctuate based on the quality of the correction data, posing challenges in certain environments.
 
-Conclusion
-In conclusion, the choice of GNSS technique for smartphone navigation depends on the specific requirements of the application at hand. DGNSS offers moderate accuracy with real-time corrections but is limited by infrastructure. RTK provides high precision but also requires nearby base stations, making it less mobile. PPP stands out for its global coverage and flexibility, though it suffers from longer convergence times. Finally, PPP-RTK combines the advantages of both PPP and RTK, offering a versatile solution, albeit at a higher cost and complexity. Understanding the trade-offs among these techniques is crucial for selecting the most suitable GNSS method for effective and efficient navigation in smartphones.
+Implementing PPP-RTK in smartphones increases both cost and complexity, potentially hindering widespread adoption. The GNSS antennas and receivers needed to process both PPP and RTK corrections are expensive, raising production costs and selling prices of smartphone. Additionally, real-time data processing for PPP-RTK is computationally demanding, requiring high-performance CPUs. This limits its feasibility for smartphones with limited computational capabilities, affecting the wide-scale use of PPP-RTK.
+
+(882 words)
 
 ## Task 2:
 
