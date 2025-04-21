@@ -76,25 +76,12 @@ The first challenge and difficulty is the high costs due to the limited signal c
 
 The second challenge is the potential degraded positioning accuracy due to stronger signal interference. Since the LEO satellites are closer to the Earth's surface, the signals tend to be more susceptible to atmospheric disturbances such as ionospheric delays, which would introduce a higher magnitude of GNSS positioning error. Furthermore, since LEO are moving closer to the Earth's surface, the elevation angle tends to be lower compared to the satellites with higher orbit altitude. It implies that the LEO satellites are more prone to multipath effects especially in urban canyons in which reflected signals are received by the GNSS receiver in addition to the line-of-sight signals. It would make the GNSS positioning less accurate.
 
-The third challenge is the higher magnitude of Doppler shift in signals from LEO satellites. 
+The third challenge is the higher magnitude of Doppler shift in signals from LEO satellites. Since the orbital speed for LEO satellites are higher, the relative velocity between the ground GNSS receiver and the LEO satellites are higher, which causes a larger magnitude of Doppler shifts. It might make the signal acquisition and processing algorithms more complicated since the frequench change due to significant Doppler shifts have to be considered for ensuring an accurate positioning solutions. If the Doppler shift fails to be addressed properly, the accuracy positioning solutions may be degraded significantly. It implies that the significant Doppler shifts due to the fast-moving LEO GNSS satellites may introduce positioning error in addition to making the signal acquisition and processing algorithms more complicated.
+
+
 
 Geometry of Satellite Positions
 The geometry of satellite positions is crucial for accurate positioning. Ideal satellite arrangements provide a wide angle of visibility, enhancing the precision of the location fix. However, because LEO satellites are in constant motion, the geometry can change rapidly, leading to potential gaps in coverage that could affect the reliability of navigation services in certain areas.
-
-
-
-
-Doppler Shift
-LEO satellites are moving at high velocities relative to the Earth's surface, resulting in significant Doppler shifts in the signals they broadcast. This shift can complicate the calculation of precise positions, as receivers must continuously adjust for rapid changes in frequency. The Doppler effect requires sophisticated algorithms to ensure that navigation solutions remain accurate, making the system more complex than traditional GNSS systems.
-
-
-
-
-
-
-
-
-
 
 
 Positioning Algorithms
@@ -102,9 +89,6 @@ The algorithms used for position calculations must be robust enough to handle th
 
 Operational Complexity and Cost
 Implementing a LEO satellite navigation system involves not only technological challenges but also operational hurdles.
-
-Infrastructure Requirements
-To achieve the coverage necessary for effective navigation, a large constellation of LEO satellites is required. This need increases the cost of deployment and maintenance. Each satellite must be equipped with advanced technology for signal processing and communication, further driving up expenses.
 
 Ground Stations and Data Management
 Moreover, the infrastructure supporting LEO satellites includes ground stations that must be strategically placed to ensure continuous communication with the satellites. This requirement entails significant logistical and operational planning, as well as ongoing operational costs for data management and satellite control.
