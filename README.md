@@ -50,7 +50,7 @@ Furthermore, PPP's positioning accuracy is generally worse than RTK. PPP typical
 
 ### PPP-RTK
 
-PPP-RTK combines elements of both PPP and RTK to provide the best of both worlds—high precision and global coverage.
+PPP-RTK combines elements of both PPP and RTK in an attempt to provide high precision (from RTK) and global coverage (from PPP).
 
 #### Advantages
 
@@ -62,7 +62,7 @@ Another advantage of PPP-RTK is the fast convergence time. PPP-RTK considers bot
 
 Implementing PPP-RTK in smartphones increases both cost and complexity, potentially hindering widespread adoption. The GNSS antennas and receivers needed to process both PPP and RTK corrections are expensive, raising production costs and selling prices of smartphone. Additionally, real-time data processing for PPP-RTK is computationally demanding, requiring high-performance CPUs. This limits its feasibility for smartphones with limited computational capabilities, affecting the wide-scale use of PPP-RTK.
 
-(882 words)
+(884 words)
 
 ## Task 2:
 
