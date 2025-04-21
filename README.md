@@ -88,19 +88,15 @@ The last challenge would be the increased management cost. Since the signal cove
 
 ## Task 5: the impact of GNSS Reflectometry (GNSS-R) in remote sensing
 
-Global Navigation Satellite Systems (GNSS) have transformed various fields, and one of the most innovative applications is GNSS Reflectometry (GNSS-R). This technique utilizes signals from GNSS satellites reflected off surfaces, such as water bodies or land, to gather critical data about the Earth's environment. In this essay, we will explore the principles of GNSS-R, its applications, advantages, and challenges, highlighting its significant impact on remote sensing.
+GNSS Reflectometry (GNSS-R) uses reflected GNSS signals from Earth's surfaces, like water bodies or land, to gather geophysical data. GNSS satellites broadcast signals that reflect back upon touching the Earth's surface. By measuring the time delay and phase differences between direct and reflected signals, one can estimate surface properties such as roughness, moisture content, and vegetation cover. Thus, GNSS-R is useful for remote sensing. This essay discusses its applications, advantages, and challenges in remote sensing.
 
-Principles of GNSS Reflectometry
-GNSS Reflectometry leverages the signals transmitted by GNSS satellites, which are typically used for navigation. When these signals encounter surfaces, they can reflect back toward GNSS receivers. By analyzing the characteristics of these reflected signals, researchers can extract valuable information about the reflecting surfaces.
+### Applications of GNSS-R
 
-The fundamental principle behind GNSS-R lies in the measurement of the time delay and the phase differences between the direct signal and the reflected signal. This allows for the estimation of various surface properties, such as roughness, moisture content, and even vegetation cover. The technique operates under the assumption that the surface characteristics influence how the signals are reflected, making GNSS-R a powerful tool for remote sensing applications.
-
-Applications of GNSS-R
 1. Soil Moisture Estimation
+
 One of the most significant applications of GNSS-R is in the estimation of soil moisture. Accurate soil moisture data is critical for agriculture, hydrology, and climate modeling. GNSS-R provides a cost-effective and efficient means of obtaining this data over large areas without the need for extensive ground-based sensors. By analyzing the reflected signals, researchers can infer moisture levels, which helps in optimizing irrigation practices and managing water resources.
 
-2. Oceanography
-GNSS-R is also widely used in oceanography to study sea surface conditions. The technique can provide information about sea surface height, wave height, and wind speed. These parameters are essential for understanding ocean dynamics, climate change, and weather forecasting. By utilizing GNSS signals, researchers can monitor large areas of the ocean with high temporal resolution, offering insights that traditional methods may struggle to achieve.
+The second application of GNSS-R is in oceanography, which is to study the sea surface conditions. After the reflected GNSS signals from the sea surface is analyzed, the sea information such as the sea surface height, wave height, and wind speed can be obtained. With the above information, the ocean dynamics, sea level rise, and climate change can be understood while weather can be forecasted. Hence, a large area of ocean can be monitored with high temporal resolution with GNSS-R that the traditional methods may fail to achieve.
 
 3. Vegetation Monitoring
 In addition to soil and ocean studies, GNSS-R can be applied to monitor vegetation. By analyzing how GNSS signals reflect off vegetation canopies, researchers can assess plant health and biomass. This information is valuable for ecological studies, agriculture, and forestry management. GNSS-R allows for the continuous monitoring of vegetation conditions over vast landscapes, providing insights into ecosystem dynamics and changes due to environmental stressors.
