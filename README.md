@@ -100,19 +100,16 @@ The third application of GNSS-R is on vegetation monitoring. The information of 
 
 The last application is on cryosphere monitoring. The ice thickness, snow depth and the change in ice cover can be estimated via the reflected GNSS signals. This information is important because climate change on polar regions can be studied to predict the future trends in ice melt and the rise in sea level.
 
-Advantages of GNSS-R
-The use of GNSS-R offers several advantages over traditional remote sensing methods:
+### Advantages of GNSS-R
 
-1. Cost-Effectiveness
-GNSS-R requires minimal infrastructure compared to other remote sensing technologies. Existing GNSS networks can be utilized, reducing the need for extensive satellite missions or ground-based sensors, making it a cost-effective solution for large-scale monitoring.
+The first advantage is high cost-effectiveness. Compared to the existing sensing technologies, GNSS-R eliminates the need to deploy a large number of ground-based sensors to the areas requiring sensing. Furthermore, it may also eliminate the need to deploy satellites specialized for monitoring the areas requiring sensing. The elimination of the deployment of the ground-based sensors or the satellites specialized for monitoring can make the monitoring more economic.
 
-2. High Temporal Resolution
-GNSS satellites continuously transmit signals, allowing for high-frequency data collection. This characteristic is particularly beneficial for monitoring dynamic environments, such as changing weather conditions or seasonal variations in vegetation.
+The second advantage is the global coverage. The ground-based sensors used in the existing sensing technology can only provide sensing coverage locally, meaning that there exists a finite sensing range. Monitoring outside the sensing range is impossible. However, the GNSS-R enables global coverage, implying that monitoring the remote areas and inaccessible places can also be done with GNSS-R, where the traditional sensing technology usually fail to do so.
 
-3. Global Coverage
-The global nature of GNSS systems means that GNSS-R can be applied in remote and inaccessible areas, providing data where traditional methods may be limited. This capability is essential for comprehensive environmental monitoring and research.
+The last advantage is high temporal resolution. Due to the technology limitations, some sensing methods used in the existing sensing technology may be sampling-based, meaning that a relatively large time interval (may be in the order of hour) exists between samples. However, GNSS-R enables continuous monitoring as the GNSS satellites sends GNSS signals continuously. This feature is important for monitoring dynamic environments in industries such as the weather observatory.
 
-Challenges and Limitations
+### Challenges and Limitations
+
 Despite its numerous advantages, GNSS-R also faces challenges. The technique's accuracy can be influenced by factors such as multipath effects, where signals reflect off multiple surfaces before reaching the receiver, leading to erroneous data. Additionally, the dependence on GNSS satellites means that any disruptions in satellite availability or signal quality can impact data collection.
 
 Another challenge is the need for sophisticated algorithms to process the reflected signals accurately. Researchers must develop and refine these algorithms to ensure reliable interpretations of the data, which can be complex and resource-intensive.
