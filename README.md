@@ -98,7 +98,11 @@ The second application of GNSS-R is in oceanography, which is to study the sea s
 
 The third application of GNSS-R is on vegetation monitoring. The information of surface roughness and dielectric properties can be inferred from the reflected GNSS signals, and such the properties can be analyzed to estimate the vegetation health, biomass, land use, and surface conditions. This application is important for ecological studies, agriculture, land management and disaster response. Compared to the existing methods, GNSS-R enables continuous monitoring of the vegetation conditions.
 
-The last application is on cryosphere monitoring. The ice thickness, snow depth and the change in ice cover can be estimated via the reflected GNSS signals. This information is important because climate change on polar regions can be studied to predict the future trends in ice melt and the rise in sea level.
+The fourth application is on cryosphere monitoring. The ice thickness, snow depth and the change in ice cover can be estimated via the reflected GNSS signals. This information is important because climate change on polar regions can be studied to predict the future trends in ice melt and the rise in sea level.
+
+Another application is to monitor the atmoshpere. The atmospheric conditions can be analyzed by examining the reflected signals which have passed through different layers in the atmosphere. Hence, the atmospheric water vapor contents, temperature profile and ionospheric disturbances can be evaluated, which is beneficial to weather forecasting and climate studies.
+
+The last application is on the microplastic detection in the sea. The scattering properties of the ocean surface would be changed due to the existence of microplastic in the ocean. By analzing the amplitude and phase of the reflected signals, the microplastic concentration in the sea can be identified.
 
 ### Advantages of GNSS-R
 
@@ -106,13 +110,10 @@ The first advantage is high cost-effectiveness. Compared to the existing sensing
 
 The second advantage is the global coverage. The ground-based sensors used in the existing sensing technology can only provide sensing coverage locally, meaning that there exists a finite sensing range. Monitoring outside the sensing range is impossible. However, the GNSS-R enables global coverage, implying that monitoring the remote areas and inaccessible places can also be done with GNSS-R, where the traditional sensing technology usually fail to do so.
 
+The third advantage is all-weather capability. The sensing effectiveness of some existing sensing technologies such as visible sensors (that use visible lights for monitoring) tend to be easily affected by the weather conditions. However, the L-Band signals used in the GNSS-R have a large enough wavelength that is highly effective in penetrating through clouds and raining with small attenuation. It implies that the sensing effectiveness of GNSS-R tends to be independent of the weather conditions.
+
+The fourth advantage is that the sensing is non-destructive and non-invasive. Some existing sensing technologies require sensors to be installed into the ground, which may somehow alter, in an irreversible manner, the structures and properties of the items to be monitored. It may be particularly harmful to monitor environments sensitive to change such as the protected ecosystems and polar regions. With GNSS-R, the monitoring can be performed with minimal disturbance to the environment.
+
 The last advantage is high temporal resolution. Due to the technology limitations, some sensing methods used in the existing sensing technology may be sampling-based, meaning that a relatively large time interval (may be in the order of hour) exists between samples. However, GNSS-R enables continuous monitoring as the GNSS satellites sends GNSS signals continuously. This feature is important for monitoring dynamic environments in industries such as the weather observatory.
 
-### Challenges and Limitations
-
-Despite its numerous advantages, GNSS-R also faces challenges. The technique's accuracy can be influenced by factors such as multipath effects, where signals reflect off multiple surfaces before reaching the receiver, leading to erroneous data. Additionally, the dependence on GNSS satellites means that any disruptions in satellite availability or signal quality can impact data collection.
-
-Another challenge is the need for sophisticated algorithms to process the reflected signals accurately. Researchers must develop and refine these algorithms to ensure reliable interpretations of the data, which can be complex and resource-intensive.
-
-Conclusion
-GNSS Reflectometry represents a groundbreaking advancement in remote sensing, offering innovative solutions for monitoring soil moisture, ocean conditions, vegetation health, and urban environments. Its cost-effectiveness, high temporal resolution, and global coverage make it a valuable tool for scientists and researchers. While challenges remain, ongoing advancements in technology and processing algorithms promise to enhance the accuracy and applicability of GNSS-R. As the world faces pressing environmental challenges, GNSS-R will play a crucial role in providing the data needed for informed decision-making and sustainable management of natural resources.
+(818 words)
