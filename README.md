@@ -64,7 +64,83 @@ Implementing PPP-RTK in smartphones increases both cost and complexity, potentia
 
 (884 words)
 
-## Task 2:
+## Task 2: GNSS in Urban Areas
+
+After the MATLAB codes for Assignment 1 are run, the variable `navSolutions` that store the necessary information for GNSS navigation such as satellite clock correction, psuedorange measurement and satellite position is obtained. Then, the data in `navSolutions` are further processed by executing the codes in `skymask_gnass.m` for improving the GNSS localization accuracy with Skymask information. The Skymask information is loaded in `skymask_gnass.m` with the codes:
+
+```
+...
+M = readmatrix('C:\Users\owner\Documents\MATLAB\GPS\skymask_A1_urban.csv');
+...
+```
+
+The figure of Skymask in which the blocking elevation in degree is plotted as a function of azimuth in degree is as follows:
+
+![Task2_1](https://github.com/user-attachments/assets/d0aa626f-08ab-4fbf-bd38-9d21d872aa1a)
+
+After the Skymask data is loaded, the data from GNSS satellite(s) that is/are non-line-of-sight from the GNSS receiver are removed with the following codes:
+
+```
+...
+maskElVec = mask.maskElVec - 2;
+        sol = nan(nEpoch,4);
+        for k = 1:nEpoch
+            mask.rho_k = mask.pr(:,k);       
+            mask.az_k  = mask.az(:,k);       
+            mask.el_k  = mask.el(:,k);       
+            mask.Psat  = squeeze(mask.pos(:,:,k))';  
+
+            vis = false(nSat,1);
+            w   = zeros(nSat,1);
+            for i = 1:nSat
+                a = mod(mask.az_k(i),360);
+                ai = floor(a)+1; 
+                el_block = maskElVec(ai);
+                if mask.el_k(i) > el_block
+                    w(i) = sin(deg2rad(mask.el_k(i) - el_block)) * sin(deg2rad(mask.el_k(i)));
+                    vis(i) = true;
+                end
+            end
+
+            idx = find(vis);
+            if numel(idx) < 4, continue; end
+            
+            x_est = [x0; y0; z0; dt0];
+            for iter = 1:10
+                m = numel(idx);
+                mask.H = zeros(m,4);
+                mask.r = zeros(m,1);
+                mask.W = diag(w(idx));
+
+                for ii = 1:m
+                    i = idx(ii);
+                    rho_hat = norm(mask.Psat(i,:)' - x_est(1:3));
+                    pred = rho_hat + c * x_est(4);
+                    mask.r(ii) = mask.rho_k(i) - pred;
+                    u = (x_est(1:3) - mask.Psat(i,:)') / rho_hat;
+                    mask.H(ii,1:3) = u';
+                    mask.H(ii,4) = -c;
+                end
+
+                dx = (mask.H' * mask.W * mask.H) \ (mask.H' * mask.W * mask.r);
+                x_est = x_est + dx;
+                if norm(dx) < tol, break; end
+            end
+
+            sol(k,:) = x_est';
+            x0 = x_est(1);
+            y0 = x_est(2);
+            z0 = x_est(3);
+            dt0 = x_est(4);
+        end
+...
+```
+
+The calculated user's antenna position is summarized in the below figure:
+
+![Task2_2](https://github.com/user-attachments/assets/916dae7d-94fe-4259-a1af-cca75df4ea83)
+
+The average estimated GNSS position is (114.2078, 22.3195), which deviates 140.2 meters from the ground truth. In task 1, the difference between the average estimated GNSS position and the ground truth is 157.9 meters, which shows that introducing skymask data in the processing of GNSS position can help improving the GNSS positioning accuracy in urban environment.
 
 ## Task 3:
 
