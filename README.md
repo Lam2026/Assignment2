@@ -140,7 +140,7 @@ The calculated user's antenna position is summarized in the below figure:
 
 ![Task2_2](https://github.com/user-attachments/assets/916dae7d-94fe-4259-a1af-cca75df4ea83)
 
-The average estimated GNSS position is (114.2078, 22.3195), which deviates 140.2 meters from the ground truth. In task 1, the difference between the average estimated GNSS position and the ground truth is 157.9 meters, which shows that introducing skymask data in the processing of GNSS position can help improving the GNSS positioning accuracy in urban environment.
+The average estimated GNSS position is (22.319533180960924, 114.2077744107660), which deviates 141.647 meters from the ground truth. In task 1, the difference between the average estimated GNSS position and the ground truth is 157.9 meters, which shows that introducing skymask data in the processing of GNSS position can help improving the GNSS positioning accuracy in urban environment.
 
 ## Task 3:
 
