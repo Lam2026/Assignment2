@@ -146,7 +146,7 @@ The average estimated GNSS position is (22.319533180960924, 114.2077744107660), 
 
 The consistency of GPS signals from satellites can be checked with GPS RAIM algorithm. Users thus can be alerted with any inconsistencies of signals when RAIM compares all the received GPS signals.
 
-The RAIM is incorporated into WLS algorithm as follows:
+The navigation data is loaded with the codes `filePath = 'C:\Users\owner\Documents\MATLAB\GPS\navSolutionResults_opensky.mat';`. The RAIM is incorporated into WLS algorithm as follows:
 
 ```
         ...
@@ -172,6 +172,12 @@ The 3D proection level is also incorporated with the following codes:
     k = chi2inv(0.9999999, 1); % For P_md = 10^-7 given in the hint
     PL = k * sigma;
 ```
+
+The positions of satellite within the entire time period at which the dataset recorded are as follows:
+
+![Task3](https://github.com/user-attachments/assets/fd7b86ce-fcc7-4d23-8921-b1cedb3724d3)
+
+Please refer to `Task3.m` for more details on the codes.
 
 ## Task 4: Discussion on the difficulties and challenges of using LEO communication satellites for GNSS navigation
 
