@@ -228,3 +228,33 @@ The fourth advantage is that the sensing is non-destructive and non-invasive. So
 The last advantage is high temporal resolution. Due to the technology limitations, some sensing methods used in the existing sensing technology may be sampling-based, meaning that a relatively large time interval (may be in the order of hour) exists between samples. However, GNSS-R enables continuous monitoring as the GNSS satellites sends GNSS signals continuously. This feature is important for monitoring dynamic environments in industries such as the weather observatory.
 
 (818 words)
+
+## AI Prompts used
+
+### Task 1:
+```
+Model: Copilot
+Prompt(1): How are DGNSS, RTK, PPP, and PPP-RTK used in navigation? How do they different from traditional GNSS positioning technology?
+Prompt(2): Why DGNSS positioning accuracy degrades with the increasing distance from base station?
+Prompt(3): Why PPP-RTK enables fast convergence? 
+Comment: This model is free and usually gives correct information to assist my thinking.
+```
+
+### Task 4:
+```
+Model: Copilot
+Prompt(1): What is the technical advantage and disadvantage of LEO in GNSS?
+Prompt(2): Why the signal coverage of LEO is limited?
+Prompt(3): Why LEO is more easily affected by solar activity?
+Comment: This model is free and usually gives correct information to assist my thinking.
+```
+
+### Task 5:
+```
+Model: Copilot
+Prompt(1): What is the current application of GNSS-R?
+Prompt(2): How GNSS-R is used in argriculture? Why GNSS-R is chosen?
+Prompt(3): How GNSS-R is used in understanding the Earth's surface? Why GNSS-R is chosen?
+Prompt(4): How GNSS-R is used to understand the Earth's atmosphere? Why GNSS-R is chosen?
+Comment: This model is free and usually gives correct information to assist my thinking.
+```
