@@ -142,7 +142,48 @@ The calculated user's antenna position is summarized in the below figure:
 
 The average estimated GNSS position is (22.319533180960924, 114.2077744107660), which deviates 141.647 meters from the ground truth. In task 1, the difference between the average estimated GNSS position and the ground truth is 157.9 meters, which shows that introducing skymask data in the processing of GNSS position can help improving the GNSS positioning accuracy in urban environment.
 
-## Task 3:
+## Task 3: GPS RAIM (Receiver Autonomous Integrity Monitoring)
+
+The consistency of GPS signals from satellites can be checked with GPS RAIM algorithm. Users thus can be alerted with any inconsistencies of signals when RAIM compares all the received GPS signals.
+
+The RAIM is incorporated into WLS algorithm as follows:
+
+```
+        ...
+        % Initial weights (assuming equal weight for all satellites)
+        W = eye(n);
+
+        % Compute initial position estimate using WLS
+        position = (A' * W * A) \ (A' * W * current_pseudoranges);
+
+        % Compute residuals
+        residuals = current_pseudoranges - A * position;
+
+        % Compute variance of residuals
+        sigma_r2 = (residuals' * residuals) / (n - 4);
+
+        % Chi-square test for fault detection
+        chi_square = (residuals' * W * residuals) / sigma_r2;
+
+        % Define Chi-square critical value for alpha = 0.01
+        critical_value = chi2inv(0.99, n - 4);
+
+        % Fault detection
+        if chi_square > critical_value
+            disp(['Epoch ', num2str(epoch), ': Fault detected in measurements!']);
+            % Implement exclusion logic here if needed
+        end
+        ...
+```
+
+The above codes aims at detecting if any of the received GPS signals are inconsistent with one another.
+
+The 3D proection level is also incorporated with the following codes:
+
+```
+        k = chi2inv(0.9999999, 1); % For P_md = 10^-7
+        PL = k * sigma;
+```
 
 ## Task 4: Discussion on the difficulties and challenges of using LEO communication satellites for GNSS navigation
 
