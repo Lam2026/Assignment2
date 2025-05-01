@@ -66,7 +66,7 @@ Implementing PPP-RTK in smartphones increases both cost and complexity, potentia
 
 ## Task 2: GNSS in Urban Areas
 
-After the MATLAB codes for Assignment 1 are run, the variable `navSolutions` that store the necessary information for GNSS navigation such as satellite clock correction, psuedorange measurement and satellite position is obtained. Then, the data in `navSolutions` are further processed by executing the codes in `skymask_gnass.m` for improving the GNSS localization accuracy with Skymask information. The Skymask information is loaded in `skymask_gnass.m` with the codes:
+The Skymask information is loaded with the codes:
 
 ```
 ...
@@ -74,9 +74,9 @@ M = readmatrix('C:\Users\owner\Documents\MATLAB\GPS\skymask_A1_urban.csv');
 ...
 ```
 
-The figure of Skymask in which the blocking elevation in degree is plotted as a function of azimuth in degree is as follows:
+The Skymask plot is shown in the below figure that shows the Line-of-Sight (LOS) satellite(s) and Non-LOS (NLOS) satellite(s):
 
-![Task2_1](https://github.com/user-attachments/assets/d0aa626f-08ab-4fbf-bd38-9d21d872aa1a)
+![Skymask](https://github.com/user-attachments/assets/ad83dd00-5b98-4c28-b7fe-d5835e6e8bb9)
 
 After the Skymask data is loaded, the data from GNSS satellite(s) that is/are non-line-of-sight from the GNSS receiver are removed with the following codes:
 
@@ -136,48 +136,78 @@ After the Skymask data is loaded, the data from GNSS satellite(s) that is/are no
 ...
 ```
 
-Please refer to `Task2.m` for more details. The calculated user's antenna position is summarized in the below figure:
+Please refer to `T2.m` for more details. The calculated user's antenna position is summarized in the below figure:
 
 ![Task2_2](https://github.com/user-attachments/assets/916dae7d-94fe-4259-a1af-cca75df4ea83)
 
-The average estimated GNSS position is (22.319533180960924, 114.2077744107660), which deviates 141.647 meters from the ground truth. In task 1, the difference between the average estimated GNSS position and the ground truth is 157.9 meters, which shows that introducing skymask data in the processing of GNSS position can help improving the GNSS positioning accuracy in urban environment.
+The average estimated GNSS position is (22.319533180960924, 114.2077744107660), which deviates 141.647 meters from the ground truth. In Assignment 1, the difference between the average estimated GNSS position and the ground truth is 157.9 meters, which shows that introducing skymask data in the processing of GNSS position can, in some degree, help improving the GNSS positioning accuracy in urban environment.
 
 ## Task 3: GPS RAIM (Receiver Autonomous Integrity Monitoring)
 
-The consistency of GPS signals from satellites can be checked with GPS RAIM algorithm. Users thus can be alerted with any inconsistencies of signals when RAIM compares all the received GPS signals.
-
-The navigation data is loaded with the codes `filePath = 'C:\Users\owner\Documents\MATLAB\GPS\navSolutionResults_opensky.mat';`. The RAIM is incorporated into WLS algorithm as follows:
+The consistency of GPS signals from satellites can be checked with GPS RAIM algorithm. Users thus can be alerted with any inconsistencies of signals when RAIM compares all the received GPS signals.The RAIM is implemented with the following codes:
 
 ```
         ...
-        W = eye(n); % Weighting for n-satellites
-        position = (A' * W * A) \ (A' * W * current_pseudoranges); % Position Estimate calculated with WLS
-        residuals = current_pseudoranges - A * position;
-        sigma_r2 = (residuals' * residuals) / (n - 4); % Variance
-        chi_square = (residuals' * W * residuals) / sigma_r2; % Fault Detection with Chi-Square Test
-        critical_value = chi2inv(0.99, n - 4); % Chi-square critical value is defined with alpha = 0.01
+    W = diag(weight);
 
-        % Fault detection
-        if chi_square > critical_value
-            disp(['Epoch ', num2str(epoch), ': Fault detected in measurements!']);
+    residuals = omc;
+    T = residuals' * W * residuals;
+    sigma = settings.sigma;
+    T_threshold = 5.33 * sigma;
+
+    if T > T_threshold
+        min_T = inf;
+        excluded_idx = 0;
+        for i = 1:size(A, 1)
+            % exclude i-th satellite
+            A_excluded = A; A_excluded(i, :) = [];
+            W_excluded = W; W_excluded(i, :) = []; W_excluded(:, i) = [];
+            omc_excluded = omc; omc_excluded(i) = [];
+            
+            % Check matrix rank and regularize
+            H_excluded = A_excluded' * W_excluded * A_excluded;
+            if rank(H_excluded) < 4
+                continue;  % Skip geometrically ill-conditioned satellite exclusion
+            end
+            x_excluded = (H_excluded + 1e-8 * eye(4)) \ (A_excluded' * W_excluded * omc_excluded);
+            
+            % Compute residuals and test statistics
+            residuals_excluded = omc_excluded - A_excluded * x_excluded;
+            T_i = residuals_excluded' * W_excluded * residuals_excluded;
+            
+            if T_i < min_T
+                min_T = T_i;
+                excluded_idx = i;
+            end
         end
+        is_fault = (excluded_idx > 0);  % Mark fault only if valid fix is ​​found
+    else
+        is_fault = false;
+        excluded_idx = 0;
+    end
         ...
 ```
 
-The above codes aims at detecting if any of the received GPS signals are inconsistent with one another.
+The above codes aims at detecting if any of the received GPS signals are inconsistent with one another. If a satellite gives data that are inconsistent with the other satellites, the data from this satellite will be ignored.
 
 The 3D proection level is also incorporated with the following codes:
 
 ```
-    k = chi2inv(0.9999999, 1); % For P_md = 10^-7 given in the hint
-    PL = k * sigma;
+function PL = calculate_3D_PL(n_sat, sigma, P_fa, P_md)
+    dof = n_sat - 4; 
+    T_threshold = chi2inv(1 - P_fa, dof) * sigma^2;
+    
+    fun = @(PL) ncx2cdf(T_threshold, dof, (PL^2)/sigma^2) - (1 - P_md);
+    PL_guess = 50; 
+    options = optimset('Display','off');
+    PL = fzero(fun, PL_guess, options);
+end
 ```
 
-The positions of satellite within the entire time period at which the dataset recorded are as follows:
+The Standford Chart can thus be obtained:
 
-![Task3](https://github.com/user-attachments/assets/fd7b86ce-fcc7-4d23-8921-b1cedb3724d3)
+![Figure_1](https://github.com/user-attachments/assets/2996cb7b-26ea-4178-98ca-0a7d5250f8c4)
 
-Please refer to `Task3.m` for more details on the codes.
 
 ## Task 4: Discussion on the difficulties and challenges of using LEO communication satellites for GNSS navigation
 
